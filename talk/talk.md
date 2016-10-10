@@ -169,6 +169,49 @@ sys.version == version == irenamedthis
 
 ---
 
+### Classes
+OOB doesn't have to be scary...
+
+----
+
+Classes are a way of tying functions to the data they operate on.
+
+----
+
+An `object` is just an instance of a Class
+
+----
+
+Each object has the same functionality others, but the specific data contained changes
+
+----
+
+`__dunder__`
+This method is 'special'. Usually used for allowing arguments to be passed to objects, overloading operators (+, -, *, =, etc)
+
+----
+
+```python
+
+class Car():
+    def __init__(self, color, four_wheel_drive=None):
+        self.color = color
+        self.four_wheel_drive = four_wheel_drive
+
+    def __repr__(self):
+        return "{} - {}".format(self.__class__.__name__,
+                                self.color)
+
+my_suv = Car('blue', four_wheel_drive=True)
+my_car = Car('blue', four_wheel_drive=False)
+
+print(my_suv)
+# Car - Blue
+
+```
+
+---
+
 ## Lab
 
 Let's write some code.
