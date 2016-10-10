@@ -102,6 +102,73 @@ Note: find out the level of Python(or general programming) knowledge available
 
 ---
 
+Python 101
+- Strings
+- Lists
+- Dictionaries
+- imports
+- Classes
+
+----
+
+#### Strings
+```python
+name = 'Jesse'
+name.lower()
+# jesse
+print('Hello, {}!'.format(name))
+# Hello, Jesse!
+```
+
+----
+
+#### Lists
+```python
+people = ['Jesse']
+people.append('Natasha')
+print(people)
+# ['Jesse', 'Natasha']
+people.extend(['Roman', 'Kaladin'])
+print(people)
+# ['Jesse', 'Natasha', 'Roman', 'Kaladin']
+
+print(people[-1])
+# Kaladin
+
+print(people[2:])
+# ['Roman', 'Kaladin']
+```
+
+----
+
+#### Dictionaries
+```python
+book = {'title': '101 ways to prepare SPAM'}
+print(book)
+# {'title': '101 ways to prepare SPAM'}
+book['author'] = 'BDFL Guido van Rossum'
+book['year'] = '1991'
+print(book)
+# {'author': 'BDFL Guido van Rossum', 'year': '1991', 'title': '101 ways to prepare SPAM'}
+```
+
+----
+
+#### imports
+```python
+
+import sys
+
+from sys import version
+
+from sys import version as irenamedthis
+
+sys.version == version == irenamedthis
+# True
+```
+
+---
+
 ## Lab
 
 Let's write some code.
