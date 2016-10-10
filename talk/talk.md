@@ -41,3 +41,67 @@ https://www.python.org/community/sigs/current/edu-sig/
 - Quora
 
 ... a lot more
+
+---
+
+## Code Review!!!
+
+----
+
+![image](images/notimeforthat.jpg)
+
+Note: This is a Python talk, so today we're going to <change slide>
+
+---
+
+### Instead...
+- Flask is easy
+- Unit tests are awesome
+
+Note: Flask - framework for application, unittest - ensure code works as intended
+
+----
+
+## NO JAVASCRIPT!
+You don't want to read my JavaScript...
+
+---
+
+## Flask
+A simple to use, flexible tool for building web applications.
+Huge community of contributors.
+
+----
+
+1000+ community plugins/extensions (via Pip search)
+http://flask.pocoo.org/extensions/
+
+----
+
+Major users:
+- Netflix
+- Pinterest
+- LinkedIn
+- Twilio
+- Reddit
+
+---
+
+## Unittests
+Help to ensure code behaves as expected. Throw a fit if you introduce a bug (in well tested code)
+
+----
+
+Tests are only as good as you make them
+
+---
+
+Before we start...
+
+Note: find out the level of Python(or general programming) knowledge available
+
+---
+
+## Lab
+
+Let's write some code.
