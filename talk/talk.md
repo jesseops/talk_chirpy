@@ -174,39 +174,93 @@ OOB doesn't have to be scary...
 
 ----
 
-Classes are a way of tying functions to the data they operate on.
+A `Class` is a way to group related data & functions together
 
 ----
 
-An `object` is just an instance of a Class
+An `object` is an `instance` of a particular `Class`
 
 ----
 
-Each object has the same functionality others, but the specific data contained changes
+`Method` is just a different name for a `function` when it's attached to a `Class`
 
 ----
 
-`__dunder__`
-This method is 'special'. Usually used for allowing arguments to be passed to objects, overloading operators (+, -, *, =, etc)
+Each `object` will have the same `methods` as others, but the data contained inside will differ
+
+----
+
+`__init__` is a 'special method' that allows you to pass data into an `object` at creation
 
 ----
 
 ```python
 
-class Car():
-    def __init__(self, color, four_wheel_drive=None):
-        self.color = color
-        self.four_wheel_drive = four_wheel_drive
+class BankAccount():
+    def __init__(self, account_name, opening_balance=0):
+        self.name = account_name
+        self.balance = opening_balance
+
+    def withdraw(self, dollar_amount):
+        if dollar_amount >= self.balance:
+            print("Balance too low: ${:.2f} available".format(self.balance))
+        else:
+            self.balance = self.balance - dollar_amount
+            return dollar_amount
+
+    def deposit(self, dollar_amount):
+        self.balance = self.balance + dollar_amount
 
     def __repr__(self):
-        return "{} - {}".format(self.__class__.__name__,
-                                self.color)
+        return "Bank Account '{}', Balance ${:.2f}".format(self.name, self.balance)
 
-my_suv = Car('blue', four_wheel_drive=True)
-my_car = Car('blue', four_wheel_drive=False)
+```
 
-print(my_suv)
-# Car - Blue
+----
+
+```python
+
+class BankAccount():
+    def __init__(self, account_name, opening_balance=0):
+        self.name = account_name
+        self.balance = opening_balance
+
+```
+
+----
+
+```python
+
+    def withdraw(self, dollar_amount):
+        if dollar_amount >= self.balance:
+            print("Balance too low: {}".format(self.balance))
+        else:
+            self.balance = self.balance - dollar_amount
+            return dollar_amount
+
+```
+
+----
+
+```python
+
+    def deposit(self, dollar_amount):
+        self.balance = self.balance + dollar_amount
+
+```
+
+----
+
+```python
+
+savings = BankAccount('savings', opening_balance=3.50)
+print(savings)
+# Bank Account 'savings', Balance $3.50
+savings.deposit(200)
+print(savings)
+# Bank Account 'savings', Balance $203.50
+savings.withdraw(1000)
+# Balance too low: $203.50
 
 ```
 
@@ -215,3 +269,7 @@ print(my_suv)
 ## Lab
 
 Let's write some code.
+
+---
+
+Next steps
