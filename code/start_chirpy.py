@@ -1,11 +1,11 @@
 import sys
 from time import sleep
-from chirpy.chirpy import app
+from chirpy import app
 
 
 while True:
     try:
-        app.run(host='0.0.0.0', port='8686')
+        app.run(host='0.0.0.0', port=app.config['PORT'])
     except KeyboardInterrupt:
         sys.exit()
     except Exception as e:
