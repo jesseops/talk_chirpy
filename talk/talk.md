@@ -278,9 +278,21 @@ savings.withdraw(1000)
 
 ---
 
-## Lab
+## Clear as mud?
+
+----
+
+![image](images/shakeshead.gif)
+
+---
 
 Let's write some code.
+
+![image](images/runaway.gif)
+
+----
+
+Example
 
 ---
 
