@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/chirpy.css') }}" rel="stylesheet">
+    <title>
+      {{ app }}
+    </title>
+  </head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      blah
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  {% include 'login.html' %}
+  <!-- End Login Modal -->
+
+  <!-- Content -->
+
+  <div class="row">
+    <div class="col-md-2">
+    {% block trio_sidebar_left %}
+    {% endblock %}
+    </div>
+    <div class="col-md-2 col-md-push-8">
+    {% block trio_sidebar_right %}
+    {% endblock %}
+    </div>
+    <div class="col-md-8 col-md-pull-2">
+    {% block trio_content %}
+    {% endblock %}
+    </div>
+  </div>
+
+
+  <footer class="navbar navbar-fixed-bottom chirpy-footer">
+    <div>
+      &copy; Jesse Roberts 2016
+    </div>
+  </footer>
+</div>
+
+
+<script src="{{ url_for('static', filename='js/jquery-3.1.0.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+{% block javascript %}
+{% endblock %}
+</body>
+</html>(
