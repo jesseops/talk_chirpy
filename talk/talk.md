@@ -107,6 +107,7 @@ Python 101
 - Strings
 - Lists
 - Dictionaries
+- functions
 - imports
 - Classes
 
@@ -157,7 +158,6 @@ print(book)
 
 #### imports
 ```python
-
 import sys
 
 from sys import version
@@ -172,10 +172,11 @@ sys.version == version == irenamedthis
 
 #### Functions
 ```python
-
 def say_hi(name):
     print('Hello, {}'.format(name))
 
+say_hi('Guido van Rossum')
+# Hello, Guido van Rossum
 ```
 
 ---
