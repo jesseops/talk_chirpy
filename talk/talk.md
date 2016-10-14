@@ -103,6 +103,7 @@ Note: find out the level of Python(or general programming) knowledge available
 ---
 
 Python 101
+- - -
 - Strings
 - Lists
 - Dictionaries
@@ -167,6 +168,16 @@ sys.version == version == irenamedthis
 # True
 ```
 
+----
+
+#### Functions
+```python
+
+def say_hi(name):
+    print('Hello, {}'.format(name))
+
+```
+
 ---
 
 ### Classes
@@ -174,15 +185,25 @@ OOB doesn't have to be scary...
 
 ----
 
-A `Class` is a way to group related data & functions together
+## `Class`
+> A way to group related data & functions together
 
 ----
 
-An `object` is an `instance` of a particular `Class`
+## `object`
+> A single `instance` of a particular `Class`
 
 ----
 
-`Method` is just a different name for a `function` when it's attached to a `Class`
+## `method`
+
+> A different name for a `function` when it's attached to a `Class`
+
+----
+
+## `__init__`
+> A 'special method' that allows you to pass data into an `object` at creation
+
 
 ----
 
@@ -190,12 +211,9 @@ Each `object` will have the same `methods` as others, but the data contained ins
 
 ----
 
-`__init__` is a 'special method' that allows you to pass data into an `object` at creation
-
-----
+### Example
 
 ```python
-
 class BankAccount():
     def __init__(self, account_name, opening_balance=0):
         self.name = account_name
@@ -213,37 +231,31 @@ class BankAccount():
 
     def __repr__(self):
         return "Bank Account '{}', Balance ${:.2f}".format(self.name, self.balance)
-
 ```
 
 ----
 
 ```python
-
 class BankAccount():
     def __init__(self, account_name, opening_balance=0):
         self.name = account_name
         self.balance = opening_balance
-
 ```
 
 ----
 
 ```python
-
     def withdraw(self, dollar_amount):
         if dollar_amount >= self.balance:
             print("Balance too low: {}".format(self.balance))
         else:
             self.balance = self.balance - dollar_amount
             return dollar_amount
-
 ```
 
 ----
 
 ```python
-
     def deposit(self, dollar_amount):
         self.balance = self.balance + dollar_amount
 
@@ -252,7 +264,6 @@ class BankAccount():
 ----
 
 ```python
-
 savings = BankAccount('savings', opening_balance=3.50)
 print(savings)
 # Bank Account 'savings', Balance $3.50
@@ -272,4 +283,13 @@ Let's write some code.
 
 ---
 
-Next steps
+### Next steps
+
+- - -
+
+[A hands-on introduction to Python](https://www.youtube.com/watch?v=MirG-vJOg04)
+
+[Learn Python the Hard Way](https://learnpythonthehardway.org/book)
+
+[Code Academy - Python](https://www.codecademy.com/learn/python)
+
