@@ -38,6 +38,7 @@ def submit_post():
     post = {}
     post['email'] = request.form.get('email').lower().strip()
     post['post'] = request.form.get('post')
+
     # Let's just move this magic into it's own line
     email_hash = hashlib.md5(post['email'].encode('utf-8')).hexdigest()
 
@@ -47,5 +48,11 @@ def submit_post():
         profile = response.json()['entry'][0]  # Now we get JSON :)
         post['username'] = profile['preferredUsername']
         post['avatar'] = profile['thumbnailUrl']
+        post['fullname'] = profile['name']['formatted']
+    else:
+        # We should handle invalid/missing accounts
+        post['username'] = 'anonymous'
+        post['avatar'] = 'https://www.gravatar.com/avatar/{}?d=mm'.format(email_hash)
+        post['fullname'] = 'Anonymous User'
     chirpy_posts_db.append(post)
     return redirect(url_for('index'))
