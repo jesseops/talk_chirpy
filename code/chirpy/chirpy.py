@@ -59,3 +59,15 @@ def submit_post():
         post['avatar'] = 'https://www.gravatar.com/avatar/{}?d=mm'.format(email_hash)
     chirpy_posts_db[post['uuid']] = post
     return redirect(url_for('index'))
+
+
+# MORE ROUTES! This route supports passing
+# a variable, giving us the ability to
+# interact with individual posts!
+# We will accept POST requests since HTML
+# forms don't support the DELETE method
+@app.route('/post/<post_id>/delete', methods=['POST', 'DELETE'])
+def delete_post(post_id):
+    if post_id in chirpy_posts_db:
+        del chirpy_posts_db[post_id]
+    return redirect(url_for('index'))

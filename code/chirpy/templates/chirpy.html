@@ -57,6 +57,15 @@
                 <td class="col-sm-11 col-md-11 col-lg-11">
                   <p>{{ p.post }}</p>
                 </td>
+                <td>
+                  <!-- Since we aren't writing JavaScript & HTML forms don't support DELETE... -->
+                  <form action="{{ url_for('delete_post', post_id=p.uuid) }}" method="POST">
+                    <input type="hidden" name="delete" value="True">
+                    <button type="submit" class="btn btn-xs btn-link">
+                      <span class='glyphicon glyphicon-remove' style="color: #acacac;"></span>
+                    </button>
+                  </form>
+                </td>
               </tr>
             {% endfor %}
           </tbody>
