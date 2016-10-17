@@ -47,7 +47,8 @@
       <div class="row">
         <table class="table align-left">
           <tbody>
-            {% for p in posts %}
+            <!-- We allow the template to handle displaying our data -->
+            {% for p in posts.values()|sort(attribute='created', reverse=True) %}
               <tr>
                 <td class="col-sm-1 col-md-1 col-lg-1">
                   <img class="img-responsive img-rounded" src="{{ p.avatar }}">

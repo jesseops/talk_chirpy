@@ -1,6 +1,8 @@
 # Imports always come first
+import uuid
 import hashlib
 import requests
+from datetime import datetime
 from flask import Flask, request, render_template, abort, redirect, url_for
 
 
@@ -19,15 +21,18 @@ app.config.from_object(__name__)
 
 
 
+
 # Our very wonderful database
-chirpy_posts_db = []
+# Now, more complex!
+chirpy_posts_db = {}
+
 
 # We create our first 'route'
 # This tells our Flask instance that anyone connecting to
 # http://chirpy/ will get this reponse
 @app.route('/')
 def index():
-    return render_template('chirpy.html', posts=reversed(chirpy_posts_db))
+    return render_template('chirpy.html', posts=chirpy_posts_db)
 
 
 # A second route, this time for submitting
@@ -35,7 +40,7 @@ def index():
 # 'POST' methods.
 @app.route('/submit', methods=['POST'])
 def submit_post():
-    post = {}
+    post = {'uuid': str(uuid.uuid4()), 'created': datetime.utcnow()}
     post['email'] = request.form.get('email').lower().strip()
     post['post'] = request.form.get('post')
 
@@ -52,5 +57,5 @@ def submit_post():
         # We should handle invalid/missing accounts
         post['username'] = 'anonymous'
         post['avatar'] = 'https://www.gravatar.com/avatar/{}?d=mm'.format(email_hash)
-    chirpy_posts_db.append(post)
+    chirpy_posts_db[post['uuid']] = post
     return redirect(url_for('index'))
