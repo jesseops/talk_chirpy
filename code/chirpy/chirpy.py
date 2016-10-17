@@ -27,7 +27,7 @@ chirpy_posts_db = []
 # http://chirpy/ will get this reponse
 @app.route('/')
 def index():
-    return render_template('chirpy.html', posts=chirpy_posts_db)
+    return render_template('chirpy.html', posts=reversed(chirpy_posts_db))
 
 
 # A second route, this time for submitting
