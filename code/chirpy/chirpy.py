@@ -1,5 +1,6 @@
 # Imports always come first
 import hashlib
+import requests
 from flask import Flask, request, render_template, abort, redirect, url_for
 
 
@@ -37,6 +38,14 @@ def submit_post():
     post = {}
     post['email'] = request.form.get('email').lower().strip()
     post['post'] = request.form.get('post')
-    post['avatar'] = 'https://www.gravatar.com/avatar/{}.json'.format(hashlib.md5(post['email'].encode('utf-8')).hexdigest())
+    # Let's just move this magic into it's own line
+    email_hash = hashlib.md5(post['email'].encode('utf-8')).hexdigest()
+
+    response = requests.get('https://www.gravatar.com/{}.json'.format(email_hash))
+    # Once we ask for the profile data, we have to check that we got valid info back!
+    if response.status_code == 200:  # All clear!
+        profile = response.json()['entry'][0]  # Now we get JSON :)
+        post['username'] = profile['preferredUsername']
+        post['avatar'] = profile['thumbnailUrl']
     chirpy_posts_db.append(post)
     return redirect(url_for('index'))
