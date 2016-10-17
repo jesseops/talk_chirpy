@@ -50,8 +50,8 @@
             {% for p in posts %}
               <tr>
                 <td class="col-sm-1 col-md-1 col-lg-1">
-                  <img class="img-responsive img-rounded" src="{{ p.avatar }}" title="{{ p.fullname }}">
-                  <strong class="text-muted" title="{{ p.fullname }}">{{ p.username }}</strong>
+                  <img class="img-responsive img-rounded" src="{{ p.avatar }}">
+                  <strong class="text-muted">{{ p.username }}</strong>
                 </td>
                 <td class="col-sm-11 col-md-11 col-lg-11">
                   <p>{{ p.post }}</p>
