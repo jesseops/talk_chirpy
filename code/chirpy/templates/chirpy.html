@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link href="{{ url_for('static', filename='css/chirpy.css') }}" rel="stylesheet">
     <title>
-      {{ app }}
+      Chirpy
     </title>
   </head>
 <body>
@@ -15,38 +15,57 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      blah
     </div>
   </div>
-
-  <!-- Login Modal -->
-  {% include 'login.html' %}
-  <!-- End Login Modal -->
-
-  <!-- Content -->
 
   <div class="row">
-    <div class="col-md-2">
-    {% block trio_sidebar_left %}
-    {% endblock %}
+    <div class="col-sm-3 col-md-3 col-lg-3">
+      {% block trio_sidebar_left %}
+      {% endblock %}
     </div>
-    <div class="col-md-2 col-md-push-8">
-    {% block trio_sidebar_right %}
-    {% endblock %}
+     <div class="col-sm-6 col-md-6 col-lg-6">
+      <div class="row">
+        <div>
+          <form action="{{ url_for('submit_post') }}" method="POST">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" class="form-control" name="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="Post">Message</label>
+              <textarea class="form-control" name="post" placeholder="What's new?" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <div class="pull-right">
+                <button type="submit" class="btn btn-default">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div id="existingPosts">
+          {% for p in posts %}
+            post: {{ p }}
+          {% endfor %}
+        </div>
+      </div>
     </div>
-    <div class="col-md-8 col-md-pull-2">
-    {% block trio_content %}
-    {% endblock %}
+    <div class="col-sm-3 col-md-3 col-lg-3">
+      {% block trio_sidebar_right %}
+      {% endblock %}
     </div>
   </div>
+</div>
 
 
-  <footer class="navbar navbar-fixed-bottom chirpy-footer">
-    <div>
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="pull-right text-muted">
       &copy; Jesse Roberts 2016
     </div>
-  </footer>
-</div>
+  </div>
+</footer>
 
 
 <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>

@@ -1,0 +1,17 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Should match footer height */
+  margin-bottom: 30px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Fixed footer height, adjust body margin to match */
+  height: 30px;
+}
