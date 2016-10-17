@@ -1,4 +1,5 @@
 # Imports always come first
+import hashlib
 from flask import Flask, request, render_template, abort, redirect, url_for
 
 
@@ -33,5 +34,9 @@ def index():
 # 'POST' methods.
 @app.route('/submit', methods=['POST'])
 def submit_post():
-    chirpy_posts_db.append(request.form)
+    post = {}
+    post['email'] = request.form.get('email').lower().strip()
+    post['post'] = request.form.get('post')
+    post['avatar'] = 'https://www.gravatar.com/avatar/{}.json'.format(hashlib.md5(post['email'].encode('utf-8')).hexdigest())
+    chirpy_posts_db.append(post)
     return redirect(url_for('index'))
