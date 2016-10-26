@@ -50,8 +50,7 @@ https://www.python.org/community/sigs/current/edu-sig/
 
 ![image](images/notimeforthat.jpg)
 
-Note: This is a Python talk, so today we're going to <change slide>
-
+Note: Well, no one wants to just sit through endless slides of code. You want to look at code, we can go hit stack overflow. 
 ---
 
 ### Instead...
@@ -182,7 +181,7 @@ say_hi('Guido van Rossum')
 ---
 
 ### Classes
-OOB doesn't have to be scary...
+OOP doesn't have to be scary...
 
 ----
 
@@ -303,6 +302,8 @@ Example
 [A hands-on introduction to Python](https://www.youtube.com/watch?v=MirG-vJOg04)
 
 [Learn Python the Hard Way](https://learnpythonthehardway.org/book)
+
+[The Hitchhikers Guide to Python]('http://docs.python-guide.org/en/latest/')
 
 [Code Academy - Python](https://www.codecademy.com/learn/python)
 
