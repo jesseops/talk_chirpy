@@ -44,57 +44,6 @@ https://www.python.org/community/sigs/current/edu-sig/
 
 ---
 
-## Code Review!!!
-
-----
-
-![image](images/notimeforthat.jpg)
-
-Note: Well, no one wants to just sit through endless slides of code. You want to look at code, we can go hit stack overflow. 
----
-
-### Instead...
-- Flask is easy
-- Unit tests are awesome
-
-Note: Flask - framework for application, unittest - ensure code works as intended
-
-----
-
-## NO JAVASCRIPT!
-You don't want to read my JavaScript...
-
----
-
-## Flask
-A simple to use, flexible tool for building web applications.
-Huge community of contributors.
-
-----
-
-1000+ community plugins/extensions (via Pip search)
-http://flask.pocoo.org/extensions/
-
-----
-
-Major users:
-- Netflix
-- Pinterest
-- LinkedIn
-- Twilio
-- Reddit
-
----
-
-## Unittests
-Help to ensure code behaves as expected. Throw a fit if you introduce a bug (in well tested code)
-
-----
-
-Tests are only as good as you make them
-
----
-
 Before we start...
 
 Note: find out the level of Python(or general programming) knowledge available
@@ -279,9 +228,105 @@ savings.withdraw(1000)
 
 ## Clear as mud?
 
+Note: Now that we have these basics out of the way, we're going to jump into...
+
+---
+
+## Code Review!!!
+
+----
+
+![image](images/notimeforthat.jpg)
+
+Note: Well, no one wants to just sit through endless slides of code. You want to look at code, we can go hit stack overflow.
+
+---
+
+### Instead...
+
+---
+
+<!-- .slide: data-background-iframe="http://flask.pocoo.org" data-background-color="white"-->
+
+
+Note: We're going to build a simple Flask application.
+
+----
+
+## NO JAVASCRIPT!
+
+Note: You don't want to read my JavaScript... Anyway, built in HTML forms will suffice for this demo.
+
+---
+
+## Flask
+A simple to use, flexible tool for building web applications.
+Huge community of contributors.
+
+----
+
+1000+ community plugins/extensions (via Pip search)
+http://flask.pocoo.org/extensions/
+
+----
+
+Major users:
+- Netflix
+- Pinterest
+- LinkedIn
+- Twilio
+- Reddit
+
+
+---
+
+## Live coding?
+
 ----
 
 ![image](images/shakeshead.gif)
+
+Note: Yeah, not so much.
+
+---
+
+Follow along on GitHub:
+
+https://github.com/jesseops/talk_chirpy
+
+Note: I'm going to walk you through an iterative process where we build a very very basic implementation, then build out features as we go
+
+----
+
+tags/hello-flask
+
+https://github.com/jesseops/talk_chirpy/blob/hello-flask/code/chirpy/chirpy.py
+
+
+----
+
+tags/first-chirp
+
+https://github.com/jesseops/talk_chirpy/blob/first-chirp/code/chirpy/chirpy.py
+
+----
+
+tags/embed-avatar
+
+https://github.com/jesseops/talk_chirpy/blob/embed-avatar/code/chirpy/chirpy.py
+
+----
+
+tags/post-uuid
+
+https://github.com/jesseops/talk_chirpy/blob/post-uuid/code/chirpy/chirpy.py
+
+----
+
+tags/delete-post
+
+https://github.com/jesseops/talk_chirpy/blob/delete-post/code/chirpy/chirpy.py
+
 
 ---
 
@@ -291,7 +336,12 @@ Let's write some code.
 
 ----
 
-Example
+![image](images/do_it_live.jpg)
+Note: Ok, maybe I lied about live coding... Let's replace our simple post object with something object oriented!
+
+---
+
+# Q&A
 
 ---
 
