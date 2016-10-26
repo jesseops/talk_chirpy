@@ -2,7 +2,7 @@
 
 ---
 
-### `__init__`
+### Why Python?
 - Speedy development lifecycle
 - Popular for education
 - Actually useful for real work
@@ -10,6 +10,8 @@
 ----
 
 ![image](images/do_it_live.jpg)
+
+Note: demo pulled https://raw.githubusercontent.com/jesseops/yact/develop/yact/config.py
 
 ----
 
@@ -137,30 +139,7 @@ OOP doesn't have to be scary...
 ## `Class`
 > A way to group related data & functions together
 
-----
-
-## `object`
-> A single `instance` of a particular `Class`
-
-----
-
-## `method`
-
-> A different name for a `function` when it's attached to a `Class`
-
-----
-
-## `__init__`
-> A 'special method' that allows you to pass data into an `object` at creation
-
-
-----
-
-Each `object` will have the same `methods` as others, but the data contained inside will differ
-
-----
-
-### Example
+- - -
 
 ```python
 class BankAccount():
@@ -169,7 +148,7 @@ class BankAccount():
         self.balance = opening_balance
 
     def withdraw(self, dollar_amount):
-        if dollar_amount >= self.balance:
+        if dollar_amount < self.balance:
             print("Balance too low: ${:.2f} available".format(self.balance))
         else:
             self.balance = self.balance - dollar_amount
@@ -182,7 +161,41 @@ class BankAccount():
         return "Bank Account '{}', Balance ${:.2f}".format(self.name, self.balance)
 ```
 
+Note: Here is a simple class representing a bank account. We will explore this class in more detail below.
+
 ----
+
+## `object`
+> A single `instance` of a particular `Class`
+
+- - -
+
+```python
+savings = BankAccount('savings', opening_balance=3.50)
+print(savings)
+# Bank Account 'savings', Balance $3.50
+```
+
+----
+
+## `method`
+
+> A different name for a `function` when it's attached to a `Class`
+
+- - -
+
+```python
+    def deposit(self, dollar_amount):
+        self.balance = self.balance + dollar_amount
+
+```
+
+----
+
+## `__init__`
+> A 'special method' that allows you to pass data into an `object` at creation
+
+- - -
 
 ```python
 class BankAccount():
@@ -193,56 +206,28 @@ class BankAccount():
 
 ----
 
-```python
-    def withdraw(self, dollar_amount):
-        if dollar_amount >= self.balance:
-            print("Balance too low: {}".format(self.balance))
-        else:
-            self.balance = self.balance - dollar_amount
-            return dollar_amount
-```
-
-----
+Each `object` will have the same `methods` as others, but the data contained inside will differ
+- - -
 
 ```python
-    def deposit(self, dollar_amount):
-        self.balance = self.balance + dollar_amount
+savings = BankAccount('savings', opening_balance=2000)
+checking = BankAccount('checking', opening_balance=200)
+checking.withdraw(16)
+savings.deposit(16)
 
-```
-
-----
-
-```python
-savings = BankAccount('savings', opening_balance=3.50)
 print(savings)
-# Bank Account 'savings', Balance $3.50
-savings.deposit(200)
-print(savings)
-# Bank Account 'savings', Balance $203.50
-savings.withdraw(1000)
-# Balance too low: $203.50
+# Bank Account 'savings', Balance $2016.00
+
+print(checking)
+# Bank Account 'checking', Balance $184.00
 
 ```
 
 ---
 
-## Clear as mud?
+## Questions?
 
 Note: Now that we have these basics out of the way, we're going to jump into...
-
----
-
-## Code Review!!!
-
-----
-
-![image](images/notimeforthat.jpg)
-
-Note: Well, no one wants to just sit through endless slides of code. You want to look at code, we can go hit stack overflow.
-
----
-
-### Instead...
 
 ---
 
@@ -251,9 +236,11 @@ Note: Well, no one wants to just sit through endless slides of code. You want to
 
 Note: We're going to build a simple Flask application.
 
-----
+---
 
-## NO JAVASCRIPT!
+## NO JAVASCRIPT! NO HTML!
+
+(I mean, unless you want to)
 
 Note: You don't want to read my JavaScript... Anyway, built in HTML forms will suffice for this demo.
 
